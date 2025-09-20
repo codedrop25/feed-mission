@@ -1,4 +1,5 @@
 # 소셜 미디어 피드 백엔드
+## AUTHOR, 김하림
 
 ## 개요
 
@@ -39,7 +40,7 @@ feed-backend
 ### 1. 저장소 복제
 
 ```bash
-git clone <저장소 URL>
+git clone https://github.com/codedrop25/feed-mission.git
 cd feed-backend
 ```
 
@@ -65,7 +66,12 @@ docker-compose up -d
 npm run start:dev
 ```
 
-### 5. API 문서 확인
+## 필요한 추가 작업(개발자 영역)
+```
+1. 데이터 베이스 I/O 분리 작업(마스터 슬레이브), 포스트 테이블 샤딩
+2. 인메모리 캐싱 사용 - 피드 서비스의 공용 포스트들(인기게시물, 특정 게시물) 캐싱하여 RDB hit 최소화
+3. 대기 큐, 배치 처리 - 게시글은 실시간 처리가 불필요, 배치 처리로 벌크 인설트 처리
+```
 
-애플리케이션이 실행되면, 아래 주소에서 Swagger UI를 통해 API 문서를 확인하고 테스트할 수 있습니다.
-[http://localhost:3000/api](http://localhost:3000/api)
+
+
